@@ -1,0 +1,318 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<constant name='SHKAudioInputModeKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKAudioInputModeMuted' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKAudioInputModeRecording' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusCallFailed' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusCallIncoming' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusCallOutgoing' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusCallTerminated' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusCallTerminating' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusChangedNotification' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusCurrentDataRateInKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusCurrentDataRateOutKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusInCall' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusLoggedIn' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusLoginFailed' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKConnectionStatusNotConnected' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKEncryptionModeDisabled' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKEncryptionModeEnabled' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKEncryptionModeKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKEncryptionModeMandatory' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKEncryptionModeOptional' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGLESContextKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGLESFBOKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGLESLayerKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGLESSharingKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGLESTextureNameKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGestureCaptureLocalIndicatorsModeKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGestureCaptureLocalIndicatorsOff' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGestureCaptureLocalIndicatorsOn' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGestureCaptureModeBroadcast' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGestureCaptureModeKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGestureCaptureModeOff' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGestureCaptureModeReceive' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGestureCaptureNeedsUpdateFalse' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGestureCaptureNeedsUpdateKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKGestureCaptureNeedsUpdateTrue' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKLogfileKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKMainDisplayViewKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKPreviewDisplayViewKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientAudioStateKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientAudioStateStarted' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientAudioStateStopped' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientDeviceOrientationKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientDeviceOrientationLandscapeLeft' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientDeviceOrientationLandscapeRight' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientDeviceOrientationPortrait' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientDeviceOrientationPortraitUpsideDown' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientGestureStateKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientGestureStateStarted' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientGestureStateStopped' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientStateChangedNotification' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientVideoInputBack' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientVideoInputFront' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientVideoInputKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientVideoInputScreen' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientVideoStateKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientVideoStateStarted' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKRemoteClientVideoStateStopped' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKTorchModeAuto' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKTorchModeKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKTorchModeOff' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKTorchModeOn' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKTorchModeUnsupported' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKUserMessageKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKUserMessageReceivedNotification' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoDecodeDeviceHardware' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoDecodeDeviceKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoDecodeDeviceSoftware' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceBackCamera' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceFPS15' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceFPS30' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceFPSKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceFrontCamera' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceNone' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceResolution720p' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceResolutionKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceResolutionLow' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceResolutionStandard' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceScreen' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceScreenModeGLESAccelerated' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceScreenModeKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoInputDeviceScreenModeNormal' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoLocalPreviewDisabled' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoLocalPreviewEnabled' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoLocalPreviewModeKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoPlaybackLatencyHigh' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoPlaybackLatencyKey' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoPlaybackLatencyLow' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoPlaybackLatencyMedium' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoScaleModeCrop' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoScaleModeFill' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoScaleModeFit' type='@' const='true' declared_type='NSString*'/>
+<constant name='SHKVideoScaleModeKey' type='@' const='true' declared_type='NSString*'/>
+<enum name='BGRA32' value='0'/>
+<enum name='NV12' value='1'/>
+<enum name='YUV420' value='2'/>
+<class name='NSObject'>
+<method selector='shkTouchesBegan:atPoint:'>
+<arg name='gesture' index='0' type='@' declared_type='SHKTouches*'/>
+<arg name='point' index='1' type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shkTouchesCancelled:atPoint:'>
+<arg name='gesture' index='0' type='@' declared_type='SHKTouches*'/>
+<arg name='point' index='1' type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shkTouchesEnded:atPoint:'>
+<arg name='gesture' index='0' type='@' declared_type='SHKTouches*'/>
+<arg name='point' index='1' type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shkTouchesMoved:atPoint:'>
+<arg name='gesture' index='0' type='@' declared_type='SHKTouches*'/>
+<arg name='point' index='1' type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='SHKGLContext'>
+<method selector='initWithAPI:'>
+<arg name='api' index='0' type='I' declared_type='EAGLRenderingAPI'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithAPI:sharegroup:'>
+<arg name='api' index='0' type='I' declared_type='EAGLRenderingAPI'/>
+<arg name='sharegroup' index='1' type='@' declared_type='EAGLSharegroup*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='presentRenderbuffer:'>
+<arg name='target' index='0' type='I' declared_type='NSUInteger'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='renderbufferStorage:fromDrawable:'>
+<arg name='target' index='0' type='I' declared_type='NSUInteger'/>
+<arg name='drawable' index='1' type='@' declared_type='id'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+</class>
+<class name='SHKNotification'>
+<method selector='Key'>
+<retval type='@' const='true' declared_type='NSString*'/>
+</method>
+<method selector='UserObject'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='Value'>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='notificationWithKey:andValue:'>
+<arg name='key' index='0' type='@' const='true' declared_type='NSString*'/>
+<arg name='value' index='1' type='@' declared_type='id'/>
+<retval type='@' declared_type='SHKNotification*'/>
+</method>
+<method class_method='true' selector='notificationWithKey:andValue:andUserObject:'>
+<arg name='key' index='0' type='@' const='true' declared_type='NSString*'/>
+<arg name='value' index='1' type='@' declared_type='id'/>
+<arg name='userObject' index='2' type='@' declared_type='id'/>
+<retval type='@' declared_type='SHKNotification*'/>
+</method>
+<method selector='setKey:'>
+<arg name='Key' index='0' type='@' const='true' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUserObject:'>
+<arg name='UserObject' index='0' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setValue:'>
+<arg name='Value' index='0' type='@' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='SHKParseUser'>
+<method class_method='true' selector='initiateCallWithPFUser:'>
+<arg name='user' index='0' type='@' declared_type='PFUser*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='logInWithPFUsernameInBackground:password:block:'>
+<arg name='username' index='0' type='@' declared_type='NSString*'/>
+<arg name='password' index='1' type='@' declared_type='NSString*'/>
+<arg name='block' index='2' function_pointer='true' type='@?' declared_type='SHKParseUserResultBlock'>
+<arg type='@' declared_type='PFUser*'/>
+<arg type='@' declared_type='NSError*'/>
+<arg type='@' const='true' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='logOut'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='SHKTouches'>
+<method class_method='true' selector='gestureManager'>
+<retval type='@' declared_type='SHKTouches*'/>
+</method>
+<method selector='setTapCount:'>
+<arg name='tapCount' index='0' type='i' declared_type='int'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='tapCount'>
+<retval type='i' declared_type='int'/>
+</method>
+</class>
+<class name='ShowKit'>
+<method class_method='true' selector='acceptCall'>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='getStateForKey:'>
+<arg name='key' index='0' type='@' const='true' declared_type='NSString*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='hangupCall'>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='initiateCallWithUser:'>
+<arg name='username' index='0' type='@' declared_type='NSString*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method class_method='true' selector='login:password:'>
+<arg name='username' index='0' type='@' declared_type='NSString*'/>
+<arg name='password' index='1' type='@' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='login:password:withCompletionBlock:'>
+<arg name='username' index='0' type='@' declared_type='NSString*'/>
+<arg name='password' index='1' type='@' declared_type='NSString*'/>
+<arg name='block' index='2' function_pointer='true' type='@?' declared_type='void (^)(NSString *)'>
+<arg type='@' const='true' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='login:password:withCompletionObject:'>
+<arg name='username' index='0' type='@' declared_type='NSString*'/>
+<arg name='password' index='1' type='@' declared_type='NSString*'/>
+<arg name='object' index='2' type='@' declared_type='NSObject*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='logout'>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='registerUser:password:apiKey:withCompletionBlock:'>
+<arg name='username' index='0' type='@' declared_type='NSString*'/>
+<arg name='password' index='1' type='@' declared_type='NSString*'/>
+<arg name='apiKey' index='2' type='@' declared_type='NSString*'/>
+<arg name='block' index='3' function_pointer='true' type='@?' declared_type='void (^)(NSString *, NSError *)'>
+<arg type='@' declared_type='NSString*'/>
+<arg type='@' declared_type='NSError*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='rejectCall'>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='sendMessage:'>
+<arg name='message' index='0' type='@' declared_type='NSData*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method class_method='true' selector='setConfig:'>
+<arg name='dictionary' index='0' type='@' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='setState:forKey:'>
+<arg name='state' index='0' type='@' declared_type='id'/>
+<arg name='key' index='1' type='@' const='true' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='setVideoBufferCallback:'>
+<arg name='callback' index='0' function_pointer='true' type='@?' declared_type='FramebufferCallback'>
+<arg type='*' declared_type='uint8_t*'/>
+<arg type='l' declared_type='long'/>
+<arg type='l' declared_type='long'/>
+<arg type='i' declared_type='PixelFormat'/>
+<arg type='B' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='sharedInstance'>
+<retval type='@' declared_type='ShowKit*'/>
+</method>
+<method class_method='true' selector='version'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='UIViewController'>
+<method selector='shkNeedsUpdate'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<informal_protocol name='SHKTouchesDelegate'>
+<method selector='shkTouchesBegan:atPoint:' type='v20@0:4@8{CGPoint=ff}12'>
+<arg name='gesture' index='0' type='@' declared_type='SHKTouches*'/>
+<arg name='point' index='1' type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shkTouchesCancelled:atPoint:' type='v20@0:4@8{CGPoint=ff}12'>
+<arg name='gesture' index='0' type='@' declared_type='SHKTouches*'/>
+<arg name='point' index='1' type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shkTouchesEnded:atPoint:' type='v20@0:4@8{CGPoint=ff}12'>
+<arg name='gesture' index='0' type='@' declared_type='SHKTouches*'/>
+<arg name='point' index='1' type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='shkTouchesMoved:atPoint:' type='v20@0:4@8{CGPoint=ff}12'>
+<arg name='gesture' index='0' type='@' declared_type='SHKTouches*'/>
+<arg name='point' index='1' type='{CGPoint=ff}' declared_type='CGPoint'/>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+</signatures>
