@@ -2,18 +2,10 @@ class CallController < UIViewController
   def viewDidLoad
     super
     readUsers
-    drawUI
     setupShowKit
+    setupObservers
 
-    @connection_observer = App.notification_center.observe SHKConnectionStatusChangedNotification do |notification|
-      connectionStateChanged(notification)
-    end
-
-    @remote_observer = App.notification_center.observe SHKRemoteClientStateChangedNotification do |notification|
-      remoteClientStateChanged(notification)
-    end
-
-    @iAmTheCaller = false
+    drawUI
   end
 
   def viewDidDisappear
@@ -33,6 +25,22 @@ class CallController < UIViewController
     @user2 = users[1]["username"]
     @user2_pw = users[1]["password"]
   end
+
+  def setupShowKit
+    ShowKit.setState @mainVideoUIView, forKey:SHKMainDisplayViewKey
+    ShowKit.setState @previewVideoUIView, forKey:SHKPreviewDisplayViewKey
+    ShowKit.setState SHKVideoLocalPreviewEnabled, forKey:SHKVideoLocalPreviewModeKey
+  end
+
+  def setupObservers
+    @connection_observer = App.notification_center.observe SHKConnectionStatusChangedNotification do |notification|
+      connectionStateChanged(notification)
+    end
+
+    @remote_observer = App.notification_center.observe SHKRemoteClientStateChangedNotification do |notification|
+      remoteClientStateChanged(notification)
+    end
+  end  
 
   def drawUI
     @mainVideoUIView = UIView.alloc.initWithFrame(UIScreen.mainScreen.bounds).tap do |v|
@@ -78,12 +86,6 @@ class CallController < UIViewController
       layout.horizontal "[previewVideoUIView(==60)]-10-|"
       layout.horizontal "|-10-[toggleUserButton(==70)]-[loginButton(==70)]-10-[makeCallButton(==90)]-10-|"
     end
-  end
-
-  def setupShowKit
-    ShowKit.setState @mainVideoUIView, forKey:SHKMainDisplayViewKey
-    ShowKit.setState @previewVideoUIView, forKey:SHKPreviewDisplayViewKey
-    ShowKit.setState SHKVideoLocalPreviewEnabled, forKey:SHKVideoLocalPreviewModeKey
   end
 
   def connectionStateChanged(notification)
@@ -152,7 +154,6 @@ class CallController < UIViewController
       end
       @makeCallButton.setTitle("Calling...", forState: UIControlStateNormal)
     else
-      @iAmTheCaller = false
       ShowKit.hangupCall
       @makeCallButton.setTitle("Make Call", forState: UIControlStateNormal)
     end
