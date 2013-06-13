@@ -8,10 +8,20 @@ class CallController < UIViewController
     @connection_observer = App.notification_center.observe SHKConnectionStatusChangedNotification do |notification|
       connectionStateChanged(notification)
     end
+
+    @remote_observer = App.notification_center.observe SHKRemoteClientStateChangedNotification do |notification|
+      remoteClientStateChanged(notification)
+    end
+
+    @iAmTheCaller = false
   end
 
   def viewDidDisappear
     App.notification_center.unobserve @connection_observer
+    App.notification_center.unobserve @remote_observer
+
+    ShowKit.setState(nil forKey:SHKMainDisplayViewKey)
+    ShowKit.setState(nil forKey:SHKPreviewDisplayViewKey)
   end
 
   def readUsers
@@ -25,37 +35,49 @@ class CallController < UIViewController
   end
 
   def drawUI
-    @mainVideoUIView = UIView.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    self.view.addSubview(@mainVideoUIView)
+    @mainVideoUIView = UIView.alloc.initWithFrame(UIScreen.mainScreen.bounds).tap do |v|
+      v.contentMode = UIViewContentModeScaleToFill
+      v.backgroundColor = UIColor.redColor
+    end
 
-    @previewVideoUIView = UIView.alloc.initWithFrame [[self.view.frame.size.width - 90, 10], [80, 120]]
-    @previewVideoUIView.layer.borderColor = UIColor.lightGrayColor
-    @previewVideoUIView.layer.borderWidth = 1.0;
-    @previewVideoUIView.backgroundColor = UIColor.whiteColor
-    self.view.addSubview(@previewVideoUIView)   
+    @previewVideoUIView = UIView.alloc.init.tap do |v|
+      v.backgroundColor = UIColor.lightGrayColor
+    end
 
     @toggleUserButton = UIButton.buttonWithType(UIButtonTypeRoundedRect)
-    @toggleUserButton.frame = [[10,self.view.frame.size.height - 60], [50, 50]]
     @toggleUserButton.setTitle("User 1", forState:UIControlStateNormal)
     @toggleUserButton.sizeToFit
     @toggleUserButton.addTarget(self, action: :toggleUser, forControlEvents: UIControlEventTouchUpInside)
-    self.view.addSubview(@toggleUserButton)  
 
     @loginButton = UIButton.buttonWithType(UIButtonTypeRoundedRect)
-    @loginButton.frame = [[@toggleUserButton.frame.size.width + 20, self.view.frame.size.height - 60], [50, 50]]
     @loginButton.setTitle("Login", forState:UIControlStateNormal)
     @loginButton.sizeToFit
     @loginButton.addTarget(self, action: :login, forControlEvents: UIControlEventTouchUpInside)
-    self.view.addSubview(@loginButton)
 
     @makeCallButton = UIButton.buttonWithType(UIButtonTypeRoundedRect)
-    @makeCallButton.frame = [[self.view.frame.size.width - 100, self.view.frame.size.height - 60], [50, 50]]
     @makeCallButton.setTitle("Make Call", forState:UIControlStateNormal)
     @makeCallButton.setTitle("Calling", forState:UIControlStateDisabled)
     @makeCallButton.sizeToFit
     @makeCallButton.addTarget(self, action: :makeCall, forControlEvents: UIControlEventTouchUpInside)
-    
-    self.view.addSubview(@makeCallButton)
+
+    Motion::Layout.new do |layout|
+      layout.view self.view
+      layout.metrics "buttonHeight" => 50
+      layout.subviews "mainVideoUIView" => @mainVideoUIView, 
+                      "previewVideoUIView" => @previewVideoUIView,
+                      "toggleUserButton" => @toggleUserButton,
+                      "loginButton" => @loginButton,
+                      "makeCallButton" => @makeCallButton
+
+      layout.vertical "|-0-[mainVideoUIView]-0-|"
+      layout.vertical "|-10-[previewVideoUIView(==80)]"
+      layout.vertical "[toggleUserButton(==buttonHeight)]-10-|"
+      layout.vertical "[loginButton(==buttonHeight)]-10-|"
+      layout.vertical "[makeCallButton(==buttonHeight)]-10-|"
+      layout.horizontal "|-0-[mainVideoUIView]-0-|"
+      layout.horizontal "[previewVideoUIView(==60)]-10-|"
+      layout.horizontal "|-10-[toggleUserButton(==70)]-[loginButton(==70)]-10-[makeCallButton(==90)]-10-|"
+    end
   end
 
   def setupShowKit
@@ -96,6 +118,13 @@ class CallController < UIViewController
     end
   end
 
+  def remoteClientStateChanged(notification)
+    case notification.object.Value
+    when SHKRemoteClientGestureStateStarted
+      ShowKit.setState(SHKGestureCaptureModeReceive, forKey: SHKGestureCaptureModeKey) #allow incoming gestures
+    end
+  end
+
   def toggleUser
     newTitle = @toggleUserButton.titleLabel.text == "User 1" ? "User 2" : "User 1"
     @toggleUserButton.setTitle(newTitle, forState:UIControlStateNormal)
@@ -123,6 +152,7 @@ class CallController < UIViewController
       end
       @makeCallButton.setTitle("Calling...", forState: UIControlStateNormal)
     else
+      @iAmTheCaller = false
       ShowKit.hangupCall
       @makeCallButton.setTitle("Make Call", forState: UIControlStateNormal)
     end
