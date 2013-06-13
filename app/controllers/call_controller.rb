@@ -1,19 +1,16 @@
 class CallController < UIViewController
   def viewDidLoad
     super
+    drawUI
+
     readUsers
     setupShowKit
     setupObservers
-
-    drawUI
   end
 
   def viewDidDisappear
     App.notification_center.unobserve @connection_observer
     App.notification_center.unobserve @remote_observer
-
-    ShowKit.setState(nil forKey:SHKMainDisplayViewKey)
-    ShowKit.setState(nil forKey:SHKPreviewDisplayViewKey)
   end
 
   def readUsers
@@ -45,7 +42,6 @@ class CallController < UIViewController
   def drawUI
     @mainVideoUIView = UIView.alloc.initWithFrame(UIScreen.mainScreen.bounds).tap do |v|
       v.contentMode = UIViewContentModeScaleToFill
-      v.backgroundColor = UIColor.redColor
     end
 
     @previewVideoUIView = UIView.alloc.init.tap do |v|
